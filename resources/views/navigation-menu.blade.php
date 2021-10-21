@@ -1,3 +1,14 @@
+@php
+$nav_links_administrador = [
+[
+'name' => 'Registro',
+'route' => route('registro'),
+'active' => request()->routeIs('registro'),
+],
+];
+
+@endphp
+
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,10 +23,18 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+{{-- <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-jet-nav-link> --}}
+                @if(auth()->user()->profile_id == 1 || auth()->user()->profile_id == 3)
+                     @foreach ($nav_links_administrador as $nav_link)
+                    <x-jet-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
+                        {{ $nav_link['name'] }}
                     </x-jet-nav-link>
+                    @endforeach
+                @endif
                 </div>
+                
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
