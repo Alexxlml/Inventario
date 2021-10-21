@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Perfil;
 
 class PerfilSeeder extends Seeder
 {
@@ -13,6 +14,8 @@ class PerfilSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Perfil::create(['name' => 'Administrador']);
+        Perfil::create(['name' => 'Gestor']);
+        Perfil::create(['name' => 'Capturista']);
     }
 }
