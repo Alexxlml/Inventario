@@ -8,7 +8,7 @@ use App\Models\Categoria;
 
 class Registro extends Component
 {
-public $nombre, $descripcion,$categoria_seleccionada, $sucursales_seleccionada, $precio, $fecha_compra;
+public $nombre, $descripcion,$categoria_seleccionada, $sucursal_seleccionada, $precio, $fecha_compra;
 public $categorias, $sucursales;
 
     public function mount(){
@@ -19,5 +19,9 @@ public $categorias, $sucursales;
     public function render()
     {
         return view('livewire.registro');
+    }
+
+    public function registrar(){
+        return redirect()->route('registro');
     }
 }
