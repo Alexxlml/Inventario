@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePerfilesTable extends Migration
+class AddProfilesFieldsToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreatePerfilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('perfiles', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreignId('profile_id')->constrained();
         });
     }
 
@@ -27,6 +25,8 @@ class CreatePerfilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('perfiles');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 }

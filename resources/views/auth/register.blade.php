@@ -20,8 +20,8 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="role_id" value="{{ __('Perfil') }}" />
-                <select id="role_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" type="text" name="role_id" :value="old('role_id')" required autofocus autocomplete="role_id">
+                <x-jet-label for="profile_id" value="{{ __('Perfil') }}" />
+                <select id="profile_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" type="text" name="profile_id" :value="old('profile_id')" required autofocus autocomplete="profile_id">
                     <option value="1">Administrador</option>
                     <option value="2">Gestor</option>
                     <option value="3">Capturista</option>
