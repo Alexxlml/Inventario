@@ -22,5 +22,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/registro', function () {
-    return view('livewire/registro');
+    return view('registro-producto');
 })->name('registro');
