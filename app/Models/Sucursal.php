@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Sucursal extends Model
 {
     use HasFactory;
+
+    protected $table = 'sucursales';
+
+    public $timestamps = false;
+
+    protected $fillable = [
+        'nombre_sucursal'
+    ];
+
+    // * Relacion uno a muchos
+    public function productos()
+    {
+        return $this->hasMany('App\Models\Producto');
+    }
 }

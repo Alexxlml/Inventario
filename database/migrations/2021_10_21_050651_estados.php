@@ -13,7 +13,10 @@ class Estados extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('estados', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre_estado', 50);
+        });
     }
 
     /**
@@ -23,6 +26,6 @@ class Estados extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('estados');
     }
 }
