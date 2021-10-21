@@ -15,6 +15,11 @@
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
                             <input wire:model="nombre" type="text" name="nombre" id="nombre" class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
+                            @error('nombre')
+                            <p class="mt-1 mb-1 text-xs text-red-600 italic">
+                                {{ $message }}
+                            </p>
+                            @enderror
                         </div>
                     </div>
 
@@ -23,7 +28,12 @@
                             Descripción
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                            <input wire:model="descripcion" type="text" name="descripcion" id="descripcion" class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
+                            <textarea wire:model="descripcion" id="descripcion" name="descripcion" rows="3" class="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"></textarea>
+                        @error('descripcion')
+                            <p class="mt-1 mb-1 text-xs text-red-600 italic">
+                                {{ $message }}
+                            </p>
+                            @enderror
                         </div>
                     </div>
 
@@ -39,6 +49,11 @@
                                 @endforeach
                             </select>
                             </select>
+                            @error('categoria_seleccionada')
+                            <p class="mt-1 mb-1 text-xs text-red-600 italic">
+                                {{ $message }}
+                            </p>
+                            @enderror
                         </div>
                     </div>
 
@@ -54,6 +69,11 @@
                                 @endforeach
                             </select>
                             </select>
+                            @error('sucursal_seleccionada')
+                            <p class="mt-1 mb-1 text-xs text-red-600 italic">
+                                {{ $message }}
+                            </p>
+                            @enderror
                         </div>
                     </div>
 
@@ -63,15 +83,25 @@
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
                             <input wire:model="precio" type="text" name="precio" id="precio" class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
+                            @error('precio')
+                            <p class="mt-1 mb-1 text-xs text-red-600 italic">
+                                {{ $message }}
+                            </p>
+                            @enderror
                         </div>
                     </div>
 
                     <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                        <label for="street-address" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                        <label for="fecha_compra" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
                             Fecha de compra
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                            <input wire:model="fecha_compra" name="fecha_compra" id="inputFechaNacimiento" type="date" value="{{ old('fecha_compra') }}" min="1961-08-29" max="" class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
+                            <input wire:model="fecha_compra" name="fecha_compra" id="fecha_compra" type="date" value="{{ old('fecha_compra') }}" min="1961-08-29" max="" class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
+                            @error('fecha_compra')
+                            <p class="mt-1 mb-1 text-xs text-red-600 italic">
+                                {{ $message }}
+                            </p>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -93,4 +123,5 @@
 
     var after = new Date().toISOString().split('T')[0];
     document.getElementsByName("fecha_compra")[0].setAttribute('min', '2021-01-01');
+
 </script>
