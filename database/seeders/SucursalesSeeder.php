@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Sucursal;
 use Illuminate\Database\Seeder;
 
 class SucursalesSeeder extends Seeder
@@ -13,6 +14,9 @@ class SucursalesSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Sucursal::create(['nombre_sucursal' => 'Cuernavaca']);
+        Sucursal::create(['nombre_sucursal' => 'Yautepec']);
+        Sucursal::create(['nombre_sucursal' => 'Cuautla']);
+        Sucursal::create(['nombre_sucursal' => 'Acapulco']);
     }
 }
