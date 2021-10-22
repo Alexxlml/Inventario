@@ -11,6 +11,7 @@ use Maatwebsite\Excel\Facades\Excel;
 class Reportes extends Component
 {
     public $bandera = 1, $productos;
+    public $fecha_inicio, $fecha_termino, $fecha_termino_hora;
 
 
     public function render()
@@ -36,6 +37,7 @@ class Reportes extends Component
             ->select('productos.id', 'productos.nombre', 'productos.descripcion',
             'categorias.nombre_categoria', 'sucursales.nombre_sucursal', 'estados.nombre_estado', 'productos.precio', 
             'productos.fecha_compra', 'productos.comentarios', 'productos.created_at', 'productos.updated_at')
+            ->orderBy('productos.id', 'desc')
             ->get();
             
         return Excel::download(new ProductosExport($this->productos), 'productos(' . $this->fecha_actual . ').csv', \Maatwebsite\Excel\Excel::CSV);
@@ -43,7 +45,7 @@ class Reportes extends Component
 
     public function exportDate()
     {
-        $this->fecha_actual = Carbon::now();
+        $this->fecha_termino_hora = $this->fecha_termino . ' 23:59:59';
 
         $this->productos = DB::table('productos')
         ->join('categorias', 'productos.categoria_id', '=', 'categorias.id')
@@ -62,10 +64,11 @@ class Reportes extends Component
             'productos.created_at',
             'productos.updated_at'
         )
-        ->where('')
+        ->whereBetween('productos.created_at', [$this->fecha_inicio, $this->fecha_termino_hora ])
+        ->orderBy('productos.id', 'desc')
         ->get();
 
-        return Excel::download(new ProductosExport($this->productos), 'productos(' . $this->fecha_actual . ').csv', \Maatwebsite\Excel\Excel::CSV);
+        return Excel::download(new ProductosExport($this->productos), 'productos('.'de_' . $this->fecha_inicio . '_a_'. $this->fecha_termino.').csv', \Maatwebsite\Excel\Excel::CSV);
     }
 
 
