@@ -75,7 +75,7 @@
                                 </a>
                             </div>
                             <div class="transform text-red-500 hover:text-red-700 hover:scale-150">
-                                <a wire:click="triggerConfirm({{ $producto->id }})">
+                                <a wire:click="eliminar({{ $producto->id }})">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
                                     </svg>

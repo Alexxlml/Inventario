@@ -17,6 +17,7 @@ class Bandeja extends Component
     ];
 
     public $search, $perPage = '5';
+    public $producto_id;
 
     public function render()
     {
@@ -25,9 +26,22 @@ class Bandeja extends Component
                 ->join('categorias', 'productos.categoria_id', '=', 'categorias.id')
                 ->join('sucursales', 'productos.sucursal_id', '=', 'sucursales.id')
                 ->select('productos.id', 'productos.nombre', 'categorias.nombre_categoria', 'sucursales.nombre_sucursal')
-                ->where('nombre', 'LIKE', "%{$this->search}%")
+                ->where('productos.nombre', 'LIKE', "%{$this->search}%")
+                ->orWhere('categorias.nombre_categoria', 'LIKE', "%{$this->search}%")
+                ->orWhere('sucursales.nombre_sucursal', 'LIKE', "%{$this->search}%")
                 ->orderBy('id', 'DESC')
                 ->paginate($this->perPage),
         ]);
+    }
+
+    public function eliminar($id)
+    {
+        $this->producto_id = Producto::find($id);
+
+        DB::transaction(function () {
+            $this->producto_id->delete();
+        });
+
+        return redirect()->route('bandeja');
     }
 }
