@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Estado;
 use Illuminate\Database\Seeder;
 
 class EstadosSeeder extends Seeder
@@ -13,6 +14,7 @@ class EstadosSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Estado::create(['nombre_estado' => 'Abierto']);
+        Estado::create(['nombre_estado' => 'Cerrado']);
     }
 }
