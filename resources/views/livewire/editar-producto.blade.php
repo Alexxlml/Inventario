@@ -113,6 +113,40 @@
                                             @enderror
                                         </div>
                                     </div>
+
+                                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                                        <label for="estado" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                                            Estado
+                                        </label>
+                                        <div class="mt-1 sm:mt-0 sm:col-span-2">
+                                            <select wire:model="estado_seleccionado" id="estado" name="estado" class=" max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md" estado>
+                                                @foreach ($estados as $estado)
+                                                <option value="{{$estado->id}}">{{$estado->nombre_estado}}</option>
+                                                @endforeach
+                                            </select>
+                                            </select>
+                                            @error('estado_seleccionado')
+                                            <p class="mt-1 mb-1 text-xs text-red-600 italic">
+                                                {{ $message }}
+                                            </p>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
+                                        <label for="comentarios" class="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                                            Descripción
+                                        </label>
+                                        <div class="mt-1 sm:mt-0 sm:col-span-2">
+                                            <textarea wire:model="comentarios" id="comentarios" name="comentarios" rows="3" class="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"></textarea>
+                                            @error('comentarios')
+                                            <p class="mt-1 mb-1 text-xs text-red-600 italic">
+                                                {{ $message }}
+                                            </p>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
