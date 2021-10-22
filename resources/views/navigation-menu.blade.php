@@ -10,6 +10,11 @@ $nav_links_administrador = [
 'route' => route('bandeja'),
 'active' => request()->routeIs('bandeja'),
 ],
+[
+'name' => 'Reportes',
+'route' => route('reportes'),
+'active' => request()->routeIs('reportes'),
+],
 ];
 
 $nav_links_gestor = [
@@ -18,6 +23,12 @@ $nav_links_gestor = [
 'route' => route('bandeja'),
 'active' => request()->routeIs('bandeja'),
 ],
+[
+'name' => 'Reportes',
+'route' => route('reportes'),
+'active' => request()->routeIs('reportes'),
+],
+
 ];
 
 $nav_links_capturista = [
@@ -25,6 +36,11 @@ $nav_links_capturista = [
 'name' => 'Registro',
 'route' => route('registro'),
 'active' => request()->routeIs('registro'),
+],
+[
+'name' => 'Reportes',
+'route' => route('reportes'),
+'active' => request()->routeIs('reportes'),
 ],
 ];
 
