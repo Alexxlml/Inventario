@@ -24,3 +24,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/registro', function () {
     return view('registro-producto');
 })->name('registro');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/bandeja', function () {
+    return view('bandeja-producto');
+})->name('bandeja');
