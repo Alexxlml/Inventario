@@ -38,9 +38,16 @@ class EditarProducto extends Component
 
     public function mount($id)
     {
-        $this->producto = Producto::find($id);
         $this->categorias = Categoria::all();
         $this->sucursales = Sucursal::all();
+
+        $this->producto = Producto::find($id);
+        $this->nombre = $this->producto->nombre;
+        $this->descripcion = $this->producto->descripcion;
+        $this->categoria_seleccionada = $this->producto->categoria_id;
+        $this->sucursal_seleccionada = $this->producto->sucursal_id;
+        $this->precio = $this->producto->precio;
+        $this->fecha_compra = $this->producto->fecha_compra;
     }
     
     public function render()
