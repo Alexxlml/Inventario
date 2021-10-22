@@ -23,7 +23,7 @@
                                             Nombre
                                         </label>
                                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                            <input wire:model="nombre" type="text" name="nombre" id="nombre" class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
+                                            <input wire:model="nombre" type="text" name="nombre" id="nombre" class="disabled:opacity-50 max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md" disabled>
                                             @error('nombre')
                                             <p class="mt-1 mb-1 text-xs text-red-600 italic">
                                                 {{ $message }}
@@ -37,7 +37,7 @@
                                             Descripción
                                         </label>
                                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                            <textarea wire:model="descripcion" id="descripcion" name="descripcion" rows="3" class="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"></textarea>
+                                            <textarea wire:model="descripcion" id="descripcion" name="descripcion" rows="3" class="disabled:opacity-50 max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md" disabled></textarea>
                                             @error('descripcion')
                                             <p class="mt-1 mb-1 text-xs text-red-600 italic">
                                                 {{ $message }}
@@ -51,7 +51,7 @@
                                             Categoria
                                         </label>
                                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                            <select wire:model="categoria_seleccionada" id="categoria" name="categoria" class="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
+                                            <select wire:model="categoria_seleccionada" id="categoria" name="categoria" class="disabled:opacity-50 max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md" disabled>
                                                 <option></option>
                                                 @foreach ($categorias as $categoria)
                                                 <option value="{{$categoria->id}}">{{$categoria->nombre_categoria}}</option>
@@ -71,7 +71,7 @@
                                             Sucursal
                                         </label>
                                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                            <select wire:model="sucursal_seleccionada" id="sucursal" name="sucursal" class="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
+                                            <select wire:model="sucursal_seleccionada" id="sucursal" name="sucursal" class="disabled:opacity-50 max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md" disabled>
                                                 <option></option>
                                                 @foreach ($sucursales as $sucursal)
                                                 <option value="{{$sucursal->id}}">{{$sucursal->nombre_sucursal}}</option>
@@ -91,7 +91,7 @@
                                             Precio
                                         </label>
                                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                            <input wire:model="precio" type="text" name="precio" id="precio" class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
+                                            <input wire:model="precio" type="text" name="precio" id="precio" class="disabled:opacity-50 max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md" disabled>
                                             @error('precio')
                                             <p class="mt-1 mb-1 text-xs text-red-600 italic">
                                                 {{ $message }}
@@ -105,7 +105,7 @@
                                             Fecha de compra
                                         </label>
                                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                                            <input wire:model="fecha_compra" name="fecha_compra" id="fecha_compra" type="date" value="{{ old('fecha_compra') }}" min="1961-08-29" max="" class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
+                                            <input wire:model="fecha_compra" name="fecha_compra" id="fecha_compra" type="date" value="{{ old('fecha_compra') }}" min="1961-08-29" max="" class="disabled:opacity-50 max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md" disabled>
                                             @error('fecha_compra')
                                             <p class="mt-1 mb-1 text-xs text-red-600 italic">
                                                 {{ $message }}
@@ -120,7 +120,7 @@
                         <div class="pt-5">
                             <div class="flex justify-end">
                                 <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                    Registrar
+                                    Guardar
                                 </button>
                             </div>
                         </div>
