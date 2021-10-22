@@ -7,7 +7,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <form wire:submit.prevent="registrar()" class="space-y-8 divide-y divide-gray-200" method="POST">
+                <form wire:submit.prevent="guardar()" class="space-y-8 divide-y divide-gray-200" method="POST">
                     <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5 p-6">
                         <div>
                             <div class="space-y-6 sm:space-y-5">
