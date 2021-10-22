@@ -36,9 +36,9 @@ class Productos extends Migration
 
             $table->integer('precio');
             $table->date('fecha_compra');
-            $table->date('fecha_modificacion');
 
             $table->string('comentarios', 100)->nullable();
+            $table->timestamps();
         });
     }
 

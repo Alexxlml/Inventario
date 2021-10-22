@@ -65,8 +65,9 @@ class Registro extends Component
                         'estado_id' => 1,
                         'precio' => $this->precio,
                         'fecha_compra' => $this->fecha_compra,
-                        'fecha_modificacion' => Carbon::today()->isoFormat('YYYY-MM-DD'),
                         'comentarios' => NULL,
+                        'created_at' => Carbon::now(),
+                        'updated_at' => Carbon::now(),
                     ]);
                 }
             );
