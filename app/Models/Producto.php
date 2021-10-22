@@ -11,8 +11,6 @@ class Producto extends Model
 
     protected $table = 'productos';
 
-    public $timestamps = false;
-
     protected $fillable = [
         'nombre',
         'descripcion',
@@ -21,7 +19,6 @@ class Producto extends Model
         'estado_id',
         'precio',
         'fecha_compra',
-        'fecha_modificacion',
         'comentarios',
     ];
 
