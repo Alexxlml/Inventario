@@ -20,7 +20,7 @@
     <div class="@if($bandera == 1) p-6 @else @endif">
 
         @if ($bandera == 1)
-        <form class="space-y-8 divide-y divide-gray-200">
+        <div class="space-y-8 divide-y divide-gray-200">
             <div class="space-y-8 divide-y divide-gray-200">
                 <div>
                     <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
@@ -57,12 +57,12 @@
 
             <div class="pt-5">
                 <div class="flex justify-end">
-                    <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <button wire:click="exportDate()" type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         Generar
                     </button>
                 </div>
             </div>
-        </form>
+        </div>
         @else
         @endif
     </div>
