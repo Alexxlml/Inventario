@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\EditarProducto;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +29,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/registro', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/bandeja', function () {
     return view('bandeja-producto');
 })->name('bandeja');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/edit/{id}', EditarProducto::class);
