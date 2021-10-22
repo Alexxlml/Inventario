@@ -30,6 +30,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/bandeja', function () {
     return view('bandeja-producto');
 })->name('bandeja');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/edit/{id}', function () {
-    return view('edicion-producto');
-})->name('edit');
+Route::middleware(['auth:sanctum', 'verified'])->get('/edit/{id}', EditarProducto::class);
