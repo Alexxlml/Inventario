@@ -1112,6 +1112,14 @@ select {
 	margin-left: auto;
 	margin-right: auto;
 }
+.-mx-2 {
+	margin-left: -0.5rem;
+	margin-right: -0.5rem;
+}
+.mx-2 {
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+}
 .ml-3 {
 	margin-left: 0.75rem;
 }
@@ -1583,6 +1591,9 @@ select {
 .bg-no-repeat {
 	background-repeat: no-repeat;
 }
+.fill-current {
+	fill: currentColor;
+}
 .object-cover {
 	-o-object-fit: cover;
 	   object-fit: cover;
@@ -1730,6 +1741,9 @@ select {
 }
 .font-semibold {
 	font-weight: 600;
+}
+.font-bold {
+	font-weight: 700;
 }
 .uppercase {
 	text-transform: uppercase;
@@ -2153,10 +2167,6 @@ select {
 		grid-column: span 3 / span 3;
 	}
 
-	.sm\:col-span-6 {
-		grid-column: span 6 / span 6;
-	}
-
 	.sm\:mx-0 {
 		margin-left: 0px;
 		margin-right: 0px;
@@ -2289,6 +2299,10 @@ select {
 		grid-template-columns: repeat(6, minmax(0, 1fr));
 	}
 
+	.sm\:flex-row {
+		flex-direction: row;
+	}
+
 	.sm\:flex-nowrap {
 		flex-wrap: nowrap;
 	}
@@ -2373,6 +2387,11 @@ select {
 	.sm\:px-20 {
 		padding-left: 5rem;
 		padding-right: 5rem;
+	}
+
+	.sm\:py-0 {
+		padding-top: 0px;
+		padding-bottom: 0px;
 	}
 
 	.sm\:px-3 {
