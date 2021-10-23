@@ -14,7 +14,7 @@ class Reportes extends Component
     public $fecha_actual, $fecha_inicio, $fecha_termino, $fecha_termino_hora;
 
     protected $rules = [
-        'fecha_inicio' => 'required|before:fecha_actual',
+        'fecha_inicio' => 'required|before_or_equal:fecha_actual',
         'fecha_termino' => 'required|after_or_equal:fecha_inicio',
     ];
 
