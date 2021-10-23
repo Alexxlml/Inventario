@@ -40,6 +40,40 @@ class Registro extends Component
         'fecha_compra.required' => 'Este campo no puede permanecer vacío',
     ];
 
+    // ? Inicio Alertas
+    protected $listeners = [
+        'registrar',
+        'cancelled',
+    ];
+
+    public function cancelled()
+    {
+        $this->alert('info', 'Se canceló el registro', [
+            'position' =>  'top-end',
+            'timer' =>  3000,
+            'toast' =>  true,
+            'text' =>  '',
+            'confirmButtonText' =>  'Ok',
+            'cancelButtonText' =>  'Cancel',
+            'showCancelButton' =>  false,
+            'showConfirmButton' =>  false,
+        ]);
+    }
+
+    public function triggerConfirm()
+    {
+        $this->confirm('¿Quieres realizar este registro', [
+            'toast' => false,
+            'position' => 'center',
+            'showConfirmButton' => true,
+            'confirmButtonText' =>  'Si',
+            'cancelButtonText' => 'No',
+            'onConfirmed' => 'registrar',
+            'onCancelled' => 'cancelled'
+        ]);
+    }
+    // ! Fin Alertas
+
     public function mount()
     {
         $this->categorias = Categoria::all();
@@ -76,9 +110,30 @@ class Registro extends Component
                 }
             );
 
+            $this->flash('success', 'El producto ha sido registrado con éxito', [
+                'position' =>  'top-end',
+                'timer' =>  3000,
+                'toast' =>  true,
+                'text' =>  '',
+                'confirmButtonText' =>  'Ok',
+                'cancelButtonText' =>  'Cancel',
+                'showCancelButton' =>  false,
+                'showConfirmButton' =>  false,
+            ]);
+
             return redirect()->route('registro');
+            
         } catch (Exception $ex) {
-            dd($ex);
+            $this->alert('error', 'Ha ocurrido un error', [
+                'position' =>  'top-end',
+                'timer' =>  3000,
+                'toast' =>  true,
+                'text' =>  '',
+                'confirmButtonText' =>  'Ok',
+                'cancelButtonText' =>  'Cancel',
+                'showCancelButton' =>  false,
+                'showConfirmButton' =>  false,
+            ]);
         }
     }
 }

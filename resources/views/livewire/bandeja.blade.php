@@ -75,7 +75,7 @@
                                 </a>
                             </div>
                             <div class="transform text-red-500 hover:text-red-700 hover:scale-150">
-                                <a wire:click="eliminar({{ $producto->id }})">
+                                <a wire:click="triggerConfirm({{ $producto->id }})">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20" fill="currentColor">
                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
                                     </svg>
@@ -111,78 +111,4 @@
         </div>
         @endif
     </div>
-    {{-- <x-jet-dialog-modal wire:model="modalbool">
-                    <x-slot name="title">
-                        <p class="text-center text-2xl font-medium text-red-700">
-                            @if ($banderaExiste == true)
-                            Editar incidencia
-                            @else
-                            Registrar incidencia
-                            @endif
-                        </p>
-                    </x-slot>
-
-                    <x-slot name="content">
-                        <div class="mt-4">
-                            <label for="selectcolaborador" class="block text-sm text-gray-700">
-                                Colaborador
-                            </label>
-                            <select id="selectcolaborador" wire:model="ColaboradorRegistro" name="colaborador" @if ($this->banderaExiste == true) disabled @else @endif
-                                class="block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                <option value=""></option>
-                                @if (isset($colaboradores))
-                                @foreach ($colaboradores as $colaborador)
-                                <option value="{{ $colaborador->no_colaborador }}">
-    {{ $colaborador->ap_paterno }}
-    {{ $colaborador->ap_materno }}
-    {{ $colaborador->nombre_1 }}
-    {{ $colaborador->nombre_2 }}
-    </option>
-    @endforeach
-    @endif
-    </select>
-    @error('colaborador_registro')
-    <p class="mt-1 mb-1 text-xs text-red-600 italic">
-        {{ $message }}
-    </p>
-    @enderror
-</div>
-<div class="mt-4">
-    <label class="block text-sm font-medium text-gray-700" for="inputTipoVehiculo">Tipo de Incidencia</label>
-    <select id="inputTipoVehiculo" wire:model="tipo_incidencia" name="tipo_incidencia" class="block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-        <option></option>
-        @if ($tiposIncidencia)
-        @foreach ($tiposIncidencia as $tipo)
-        <option value="{{ $tipo->id }}">
-            {{ $tipo->nombre_incidencia }}
-        </option>
-        @endforeach
-        @else
-        @endif
-    </select>
-    @error('tipo_incidencia')
-    <p class="mt-1 mb-1 text-xs text-red-600 italic">
-        {{ $message }}
-    </p>
-    @enderror
-</div>
-</x-slot>
-
-<x-slot name="footer">
-    <x-jet-secondary-button wire:click="setNull()">
-        {{ __('Cerrar') }}
-    </x-jet-secondary-button>
-
-    @if ($banderaRegistro == true)
-    @else
-    <x-jet-button class="ml-2" wire:click="acciones" wire:loading.attr="disabled">
-        @if ($banderaExiste == true)
-        {{ __('Actualizar') }}
-        @else
-        {{ __('Registrar') }}
-        @endif
-    </x-jet-button>
-    @endif
-</x-slot>
-</x-jet-dialog-modal> --}}
 </div>
