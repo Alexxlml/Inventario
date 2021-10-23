@@ -32,6 +32,7 @@ class ProductosExport implements FromCollection, WithHeadings
             'Estado',
             'Precio',
             'Fecha de Compra',
+            'Comentarios',
             'Fecha de Creacion',
             'Fecha de Modificacion'
         ];
