@@ -10,7 +10,7 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class Reportes extends Component
 {
-    public $bandera = 1, $productos;
+    public $bandera, $productos;
     public $fecha_actual, $fecha_inicio, $fecha_termino, $fecha_termino_hora;
 
     protected $rules = [
