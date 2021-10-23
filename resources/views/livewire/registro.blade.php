@@ -1,4 +1,4 @@
-<form wire:submit.prevent="registrar()" class="space-y-8 divide-y divide-gray-200" method="POST">
+<form wire:submit.prevent="triggerConfirm" class="space-y-8 divide-y divide-gray-200">
     <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5 p-6">
         <div>
             <div class="space-y-6 sm:space-y-5">
@@ -29,7 +29,7 @@
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
                             <textarea wire:model="descripcion" id="descripcion" name="descripcion" rows="3" class="max-w-lg block focus:ring-indigo-500 focus:border-indigo-500 w-full shadow-sm sm:max-w-xs sm:text-sm border-gray-300 rounded-md"></textarea>
-                        @error('descripcion')
+                            @error('descripcion')
                             <p class="mt-1 mb-1 text-xs text-red-600 italic">
                                 {{ $message }}
                             </p>
