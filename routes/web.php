@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReportePDF;
 use App\Http\Livewire\EditarProducto;
 use Illuminate\Support\Facades\Route;
 
@@ -37,3 +38,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/reportes', function () {
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/edit/{id}', EditarProducto::class);
+
+// ? ReportesPDF
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/pdf/reporte', [ReportePDF::class, 'createPDF']);
