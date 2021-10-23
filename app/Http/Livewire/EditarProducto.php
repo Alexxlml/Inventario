@@ -28,6 +28,40 @@ class EditarProducto extends Component
         'comentarios.max' => 'Se permiten 100 caracteres como máximo',
     ];
 
+    // ? Inicio Alertas
+    protected $listeners = [
+        'guardar',
+        'cancelled',
+    ];
+
+    public function cancelled()
+    {
+        $this->alert('info', 'Se canceló la operación', [
+            'position' =>  'top-end',
+            'timer' =>  3000,
+            'toast' =>  true,
+            'text' =>  '',
+            'confirmButtonText' =>  'Ok',
+            'cancelButtonText' =>  'Cancel',
+            'showCancelButton' =>  false,
+            'showConfirmButton' =>  false,
+        ]);
+    }
+
+    public function triggerConfirm()
+    {
+        $this->confirm('¿Quieres guardar la nueva información de este producto?', [
+            'toast' => false,
+            'position' => 'center',
+            'showConfirmButton' => true,
+            'confirmButtonText' =>  'Si',
+            'cancelButtonText' => 'No',
+            'onConfirmed' => 'guardar',
+            'onCancelled' => 'cancelled'
+        ]);
+    }
+    // ! Fin Alertas
+
     public function mount($id)
     {
         $this->categorias = Categoria::all();
@@ -64,9 +98,29 @@ class EditarProducto extends Component
                 }
             );
 
+            $this->flash('success', 'La información del producto ha sido guardada con éxito', [
+                'position' =>  'top-end',
+                'timer' =>  3000,
+                'toast' =>  true,
+                'text' =>  '',
+                'confirmButtonText' =>  'Ok',
+                'cancelButtonText' =>  'Cancel',
+                'showCancelButton' =>  false,
+                'showConfirmButton' =>  false,
+            ]);
+
             return redirect()->to('/edit/' . $this->producto->id);
         } catch (Exception $ex) {
-            dd($ex);
+            $this->alert('error', 'Ha ocurrido un error', [
+                'position' =>  'top-end',
+                'timer' =>  3000,
+                'toast' =>  true,
+                'text' =>  '',
+                'confirmButtonText' =>  'Ok',
+                'cancelButtonText' =>  'Cancel',
+                'showCancelButton' =>  false,
+                'showConfirmButton' =>  false,
+            ]);
         }
     }
 }
