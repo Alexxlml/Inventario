@@ -5,8 +5,9 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Producto;
 use Livewire\WithPagination;
-use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class Bandeja extends Component
 {
@@ -22,6 +23,7 @@ class Bandeja extends Component
 
     public function render()
     {
+        abort_if(Auth::user()->profile_id == 3, 401);
         return view('livewire.bandeja', [
             'productos' => DB::table('productos')
                 ->join('categorias', 'productos.categoria_id', '=', 'categorias.id')
