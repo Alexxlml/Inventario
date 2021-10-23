@@ -30,12 +30,16 @@
 
             <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" oninput="limitChar(this)" maxlenght="15" />
+            <p class="block font-medium text-sm text-gray-700" id="charCounter">15 Characters limit</p>
+
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" oninput="limitChar2(this)" maxlenght=" 15" />
+                <p class = "block font-medium text-sm text-gray-700" id="charCounter2">15 Characters limit</p>
+
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
@@ -65,5 +69,37 @@
                 </x-jet-button>
             </div>
         </form>
+        <script>
+            let limitChar = (element) => {
+                const maxChar = 15;
+
+                let ele = document.getElementById(element.id);
+                let charLen = ele.value.length;
+
+                let p = document.getElementById('charCounter');
+                p.innerHTML = maxChar - charLen + ' characters remaining';
+
+                if (charLen > maxChar) {
+                    ele.value = ele.value.substring(0, maxChar);
+                    p.innerHTML = 0 + ' characters remaining';
+                }
+            }
+            let limitChar2 = (element) => {
+            const maxChar = 15;
+
+            let ele = document.getElementById(element.id);
+            let charLen = ele.value.length;
+
+            let p = document.getElementById('charCounter2');
+            p.innerHTML = maxChar - charLen + ' characters remaining';
+
+            if (charLen > maxChar) {
+            ele.value = ele.value.substring(0, maxChar);
+            p.innerHTML = 0 + ' characters remaining';
+            }
+            }
+
+        </script>
+
     </x-jet-authentication-card>
 </x-guest-layout>
