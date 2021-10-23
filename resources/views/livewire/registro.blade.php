@@ -96,7 +96,9 @@
                             Fecha de compra
                         </label>
                         <div class="mt-1 sm:mt-0 sm:col-span-2">
-                            <input wire:model="fecha_compra" name="fecha_compra" id="fecha_compra" type="date" value="{{ old('fecha_compra') }}" min="1961-08-29" max="" class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
+                            <input wire:model="fecha_compra" name="fecha_compra" id="fecha_compra" type="date" value="{{ old('fecha_compra') }}" min="2021-01-01" max="{{ $fecha_actual }}" class="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md">
+
+
                             @error('fecha_compra')
                             <p class="mt-1 mb-1 text-xs text-red-600 italic">
                                 {{ $message }}
@@ -116,12 +118,3 @@
             </div>
         </div>
 </form>
-
-<script>
-    var today = new Date().toISOString().split('T')[0];
-    document.getElementsByName("fecha_compra")[0].setAttribute('max', today);
-
-    var after = new Date().toISOString().split('T')[0];
-    document.getElementsByName("fecha_compra")[0].setAttribute('min', '2021-01-01');
-
-</script>

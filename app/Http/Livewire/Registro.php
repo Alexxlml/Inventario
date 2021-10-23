@@ -14,6 +14,7 @@ class Registro extends Component
 {
     public $nombre, $descripcion, $categoria_seleccionada, $sucursal_seleccionada, $precio, $fecha_compra;
     public $categorias, $sucursales;
+    public $fecha_actual;
 
     protected $rules = [
         'nombre' => 'required|regex:/^([0-9a-zA-ZùÙüÜäàáëèéïìíöòóüùúÄÀÁËÈÉÏÌÍÖÒÓÜÚñÑ\.\,\-\s]+)$/|max:30',
@@ -42,6 +43,7 @@ class Registro extends Component
     {
         $this->categorias = Categoria::all();
         $this->sucursales = Sucursal::all();
+        $this->fecha_actual = Carbon::today()->isoFormat('YYYY-MM-DD');
     }
 
     public function render()
