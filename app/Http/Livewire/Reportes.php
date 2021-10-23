@@ -11,7 +11,23 @@ use Maatwebsite\Excel\Facades\Excel;
 class Reportes extends Component
 {
     public $bandera = 1, $productos;
-    public $fecha_inicio, $fecha_termino, $fecha_termino_hora;
+    public $fecha_actual, $fecha_inicio, $fecha_termino, $fecha_termino_hora;
+
+    protected $rules = [
+        'fecha_inicio' => 'required|before:fecha_actual',
+        'fecha_termino' => 'required|after_or_equal:fecha_inicio',
+    ];
+
+    protected $messages = [
+        'fecha_inicio.required' => 'Este campo no puede permanecer vacío',
+        'fecha_inicio.before' => 'No puedes elegir una fecha después del día de hoy',
+        'fecha_termino.after_or_equal' =>'No puedes elegir una fecha menor a la de inicio',
+        'fecha_termino.required' => 'Este campo no puede permanecer vacío',
+    ];
+
+    public function mount(){
+        $this->fecha_actual = Carbon::today()->isoFormat('YYYY-MM-DD');
+    }
 
 
     public function render()
@@ -45,6 +61,7 @@ class Reportes extends Component
 
     public function exportDate()
     {
+        $this->validate();
         $this->fecha_termino_hora = $this->fecha_termino . ' 23:59:59';
 
         $this->productos = DB::table('productos')

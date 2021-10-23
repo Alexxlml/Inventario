@@ -29,7 +29,9 @@
                                 Fecha inicio
                             </label>
                             <div class="mt-1">
-                                <input wire:model="fecha_inicio" name="fecha_inicio" id="fecha_inicio" type="date" value="{{ old('fecha_inicio') }}" min="" max="" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                                <input wire:model="fecha_inicio" name="fecha_inicio" id="fecha_inicio" type="date" value="{{ old('fecha_inicio') }}" min="2021-01-01" max="{{ $fecha_actual }}" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+
+
                                 @error('fecha_inicio')
                                 <p class="mt-1 mb-1 text-xs text-red-600 italic">
                                     {{ $message }}
@@ -39,11 +41,12 @@
                         </div>
 
                         <div class="sm:col-span-3">
-                            <label for="last-name" class="block text-sm font-medium text-gray-700">
+                            <label for="fecha_termino" class="block text-sm font-medium text-gray-700">
                                 Fecha termino
                             </label>
                             <div class="mt-1">
-                                <input wire:model="fecha_termino" name="fecha_termino" id="fecha_termino" type="date" value="{{ old('fecha_termino') }}" min="" max="" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                                <input wire:model="fecha_termino" name="fecha_termino" id="fecha_termino" type="date" value=" {{ old('fecha_termino') }}" min="" max="" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md">
+
                                 @error('fecha_termino')
                                 <p class="mt-1 mb-1 text-xs text-red-600 italic">
                                     {{ $message }}
