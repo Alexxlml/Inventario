@@ -16,7 +16,11 @@ class UserSeeder extends Seeder
     {
         // ! Administrador
         User::create([
-            'name' => 'Marco Zacarias',
+            'name' => 'Marco Alexis',
+            'lastname' =>'Zacarias',
+            'lastname2' => 'Rubio',
+            'access' => 1,
+            'username' => 'mazacariasr',
             'email' => 'mazacariasr@testing.com',
             'password' => bcrypt('MaryTierra1234'),
             'profile_id' => '1',
@@ -24,7 +28,11 @@ class UserSeeder extends Seeder
 
         // ? Gestor
         User::create([
-            'name' => 'José Mendoza',
+            'name' => 'Hazel Alejandro',
+            'lastname' =>'Mendoza',
+            'lastname2' => 'Ibañez',
+            'access' => 1,
+            'username' => 'haibanez',
             'email' => 'jmendoza@testing.com',
             'password' => bcrypt('MaryTierra1234'),
             'profile_id' => '2',
@@ -32,7 +40,11 @@ class UserSeeder extends Seeder
 
         // * Capturista
         User::create([
-            'name' => 'Ernesto Rodriguez',
+            'name' => 'José Manuel',
+            'lastname' =>'Alarcón',
+            'lastname2' => 'Rodríguez',
+            'access' => 1,
+            'username' => 'jmalarcon',
             'email' => 'erodriguez@testing.com',
             'password' => bcrypt('MaryTierra1234'),
             'profile_id' => '3',
