@@ -2,13 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use Exception;
+use Carbon\Carbon;
 use Livewire\Component;
+use App\Models\Producto;
 use App\Models\Sucursal;
 use App\Models\Categoria;
-use App\Models\Producto;
-use Carbon\Carbon;
-use Exception;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class Registro extends Component
 {
@@ -48,6 +49,7 @@ class Registro extends Component
 
     public function render()
     {
+        abort_if(Auth::user()->profile_id == 2, 401);
         return view('livewire.registro');
     }
 
