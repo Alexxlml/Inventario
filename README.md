@@ -86,7 +86,7 @@ Projecto para evaluación de conocimientos, desarrollado en Laravel 8 con Jetstr
 
   
 
-<p align="right">(<a  href="#top">back to top</a>)</p>
+<p align="right">(<a  href="#top">volver arriba</a>)</p>
 
   
   
@@ -196,7 +196,7 @@ php artisan migrate --seed
 
   
 
-<p align="right">(<a  href="#top">back to top</a>)</p>
+<p align="right">(<a  href="#top">volver arriba</a>)</p>
   
 
 <!-- CONTACT -->
@@ -213,7 +213,7 @@ Enlace del proyecto: [https://github.com/Alexxlml/inventario](https://github.com
 
   
 
-<p align="right">(<a  href="#top">back to top</a>)</p>
+<p align="right">(<a  href="#top">volver arriba</a>)</p>
 
 
   
