@@ -63,4 +63,10 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    // * Relacion uno a muchos
+    public function sessions()
+    {
+        return $this->hasMany('App\Models\PVisitSession');
+    }
 }
