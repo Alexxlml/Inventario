@@ -277,9 +277,9 @@ npm run dev
 
 4. Crear la base de datos del proyecto
 
-* Entrar a localhost en Chrome o Firefox
+* Entrar a `localhost` en Chrome o Firefox
 
-* Abrir PHPMyAdmin
+* Abrir `PHPMyAdmin`
 
 * Crear una base de datos con el nombre: _" inventario "_
 
