@@ -259,7 +259,7 @@ composer update
 
   
 
-3. Instalar librerías node
+3. Instalar librerías node y compilar
 
   
 
