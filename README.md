@@ -312,7 +312,7 @@ php artisan key:generate
 php artisan migrate --seed
 
 ```
-<br/>
+
 * Se incluyen seeders con datos de prueba para la ejecución, si quieres ver los usuarios creados abre el archivo <br/> `C:\xampp\htdocs\inventario\database\seeders\UserSeeder.php`
 <br/>
 
