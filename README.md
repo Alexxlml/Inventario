@@ -1,65 +1,249 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<div  id="top"></div>
+
+<!--
+
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+
+*** that would make this better, please fork the repo and create a pull request
+
+*** or simply open an issue with the tag "enhancement".
+
+*** Don't forget to give the project a star!
+
+*** Thanks again! Now go create something AMAZING! :D
+
+-->
+
+  
+  
+  
+
+<!-- PROJECT SHIELDS -->
+
+<!--
+
+*** I'm using markdown "reference style" links for readability.
+
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+
+*** See the bottom of this document for the declaration of the reference variables
+
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+
+-->
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+  
+  
+  
+
+<!-- PROJECT LOGO -->
+
+<h3 align="center">Inventario</h3>
+
+  
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+Projecto para evaluación de conocimientos, desarrollado en Laravel 8 con Jetstream y Livewire como Stack así como TailwindCSS para el framework de diseño.
 </p>
 
-## About Laravel
+<br  />
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+</div>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<!-- TABLE OF CONTENTS -->
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<details>
 
-## Learning Laravel
+<summary>Tabla de contenidos</summary>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<li><a  href="#built-with">Construido con</a></li>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<li><a  href="#getting-started">Comenzando</a></li>
 
-## Laravel Sponsors
+<ul>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<li><a  href="#prerequisites">Pre-requisitos</a></li>
 
-### Premium Partners
+<li><a  href="#installation">Instalación</a></li>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+<li><a  href="#contact">Contacto</a></li>
+</ul>
+</details>
 
-## Contributing
+  
+  
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Construido con
 
-## Code of Conduct
+* [Laravel](https://laravel.com)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* [Jetstream](https://jetstream.laravel.com)
 
-## Security Vulnerabilities
+* [TailwindCSS](https://tailwindcss.com/)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+  
 
-## License
+<p align="right">(<a  href="#top">back to top</a>)</p>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+  
+  
+  
+
+<!-- GETTING STARTED -->
+
+## Comenzando
+
+
+### Pre-requisitos
+
+* Descargar e instalar [XAMPP](https://www.apachefriends.org/download.html) en su última versión con PHP 8.0
+* Descargar e instalar [Node](https://nodejs.dev/download/) en su versión más reciente
+* Agregar PHP a las variables de entorno, puedes seguir el siguiente [Tutorial](https://www.netveloper.com/php-variable-de-entorno-en-windows)
+* Descargar e instalar [Composer](https://getcomposer.org/download/)
+* Habilitar la libreria `GD` en XAMPP, puedes seguir el siguiente [Tutorial](https://www.youtube.com/watch?v=b5aAYE7s_vI)
+* Crear un dominio virtual para la aplicación, puedes seguir el siguiente [Tutorial](https://www.youtube.com/watch?v=HzygRlPmYQc&t=182s&ab_channel=CodersFree)
+
+* En base al tutorial del dominio virtual, añadir la siguiente ruta a este archivo `C:\Windows\System32\drivers\etc\hosts`
+```sh
+
+127.0.0.1	inventario.test
+
+```
+* Pegar las siguientes líneas al final del archivo  `C:\xampp\apache\conf\extra\httpd-vhosts.conf`
+```sh
+
+NameVirtualHost *
+<VirtualHost *>
+DocumentRoot "C:\xampp\htdocs"
+ServerName localhost
+</VirtualHost>
+
+<VirtualHost *>
+DocumentRoot "C:\xampp\htdocs\inventario\public"
+ServerName inventario.test
+<Directory "C:\xampp\htdocs\inventario\public">
+Options All
+AllowOverride All
+Require all granted
+</Directory>
+</VirtualHost>
+
+```
+
+
+  
+
+### Installation
+
+1. Clonar el repositorio dentro de `C:\xampp\htdoc`
+
+```sh
+
+git clone https://github.com/Alexxlml/inventario.git
+
+```
+
+2. Instalar librerías Laravel
+
+	* Abrir la terminal (git bash, powershell o cmd) dentro o fuera de VSCode
+	* Navegar hasta la carpeta del proyecto
+	* Ejecutar el siguiente comando
+
+```sh
+
+composer update
+
+```
+
+3. Instalar librerías node
+
+```sh
+
+npm install
+npm run dev
+
+```
+4. Crear la base de datos del proyecto
+ 
+	* Entrar a localhost en Chrome o Firefox
+	* Abrir PHPMyAdmin
+	* Crear una base de datos con el nombre: _" inventario "_
+	
+	<br/>
+5. Copiar el archivo `C:/xampp/htdoc/inventario/.env.example` pegarlo en el directorio raiz del proyecto
+	* Cambiar el nombre a .env
+<br/>
+
+6. Crear la llave de la aplicación con el siguiente comando
+
+```sh
+
+php artisan key:generate
+
+```
+  
+7. Ejecutar las migraciones en la consola, situado en la ruta del proyecto
+
+```sh
+
+php artisan migrate --seed
+
+```
+8. Abrir en Chrome o Firefox `inventario.test`
+
+  
+
+<p align="right">(<a  href="#top">back to top</a>)</p>
+  
+
+<!-- CONTACT -->
+
+## Contacto
+
+  
+
+Marco Alexis Zacarias Rubio - marcoalexiszacariasrubio@gmail.com
+
+  
+
+Enlace del proyecto: [https://github.com/Alexxlml/inventario](https://github.com/github_username/repo_name)
+
+  
+
+<p align="right">(<a  href="#top">back to top</a>)</p>
+
+
+  
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]:  https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+
+[contributors-url]:  https://github.com/github_username/repo_name/graphs/contributors
+
+[forks-shield]:  https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+
+[forks-url]:  https://github.com/github_username/repo_name/network/members
+
+[stars-shield]:  https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+
+[stars-url]:  https://github.com/github_username/repo_name/stargazers
+
+[issues-shield]:  https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+
+[issues-url]:  https://github.com/github_username/repo_name/issues
+
+[license-shield]:  https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+
+[license-url]:  https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+
+[linkedin-shield]:  https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+
+[linkedin-url]:  https://www.linkedin.com/in/marcozr/
+
+[product-screenshot]:  images/screenshot.png
