@@ -136,7 +136,7 @@ Require all granted
 
   
 
-### Installation
+### Instalación
 
 1. Clonar el repositorio dentro de `C:\xampp\htdoc`
 
