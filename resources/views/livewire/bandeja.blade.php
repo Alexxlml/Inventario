@@ -63,7 +63,6 @@
                     <td class="px-8 py-4 whitespace-nowrap text-left text-sm text-gray-800">
                         {{ $producto->nombre_sucursal }}
                     </td>
-                    @if (auth()->user()->profile_id == 1)
                     <td>
                         <div class="flex justify-center py-4 cursor-pointer">
                             <div class="transform text-yellow-500 hover:text-yellow-700 hover:scale-150">
@@ -89,9 +88,6 @@
                                     </svg>
                                 </a>
                             </div>
-                            @else
-
-                            @endif
                         </div>
                     </td>
                     @else
