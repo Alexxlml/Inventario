@@ -3,9 +3,9 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             @if (Auth()->user()->profile_id == 1)
             {{ __('Registro') }}
-            @elseif (Auth()->user()->profile_id == 1)
+            @elseif (Auth()->user()->profile_id == 2)
             {{ __('Bandeja') }}
-            @elseif (Auth()->user()->profile_id == 1)
+            @elseif (Auth()->user()->profile_id == 3)
             {{ __('Registro') }}
             @else
             {{ __('Dashboard') }}
